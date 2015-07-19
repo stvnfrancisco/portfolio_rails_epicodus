@@ -1,6 +1,31 @@
+<% content_for(:title, "skill | Chef") %>
+
 <h1><%= @skill.name %></h1>
 
-<p><%= link_to "Edit", edit_skill_path(@skill) %></p>
-<p><%= link_to "Delete", skill_path(@skill),
+
+<% if @skill.experiences.any? %>
+  <h4>Here are the experiences of this skill:</h4>
+
+  <ul>
+    <% @skill.experiences.each do |experience| %>
+    <li>
+      <%= experience.description %>
+
+      <%= link_to "Edit", edit_skill_experience_path(@skill, experience) %>
+      <%= link_to "Delete", skill_experience_path(@skill, experience),
+                              :data => {:confirm => "Are you sure?",
+                              :method => "delete"} %>
+    </li>
+  </ul>
+  <% end %>
+
+<% else %>
+  <p>There are no experiences yet!</p>
+<% end %>
+
+<p><%= link_to "Add an Experience", new_skill_experience_path(@skill) %></p>
+<p><%= link_to "Delete Skill", skill_path(@skill),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
+
+<p><%= link_to "Home", skills_path %></p>

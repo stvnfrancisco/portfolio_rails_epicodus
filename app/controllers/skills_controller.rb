@@ -4,17 +4,19 @@ class SkillsController < ApplicationController
   end
 
   def show
-  @skill = Skill.find(params[:id])
-end
+    @skill = Skill.find(params[:id])
+    @experiences = Experience.all
+  end
+
 
   def new
-  @skill = Skill.new
-end
+    @skill = Skill.new
+  end
 
-def create
-  @skill = Skill.new(skill_params)
-  if @skill.save
-    flash[:notice] = "Skill successfully added!"
+  def create
+    @skill = Skill.new(skill_params)
+    if @skill.save
+      flash[:notice] = "skill successfully added!"
       redirect_to skills_path
     else
       render :new
@@ -28,8 +30,8 @@ def create
   def update
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
-      flash[:notice] = "Skill successfully updated!"
-      redirect_to skill_path(@skill)
+       flash[:notice] = "skill successfully updated!"
+      redirect_to skills_path
     else
       render :edit
     end
@@ -38,13 +40,12 @@ def create
   def destroy
     @skill = Skill.find(params[:id])
     @skill.destroy
-    flash[:notice] = "Skill successfully deleted."
     redirect_to skills_path
   end
 
-private
-  def skill_params
-    params.require(:skill).permit(:name, :description)
-  end
 
+    private
+    def skill_params
+      params.require(:skill).permit(:name)
+    end
 end

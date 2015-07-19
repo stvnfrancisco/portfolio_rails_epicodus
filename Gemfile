@@ -3,13 +3,15 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'pg'
 gem 'sass-rails'
+gem 'bootstrap-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'sqlite3'
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
@@ -19,9 +21,9 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
-  gem 'pry'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
 end
