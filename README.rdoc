@@ -1,7 +1,8 @@
 == README
 
 Title: Portfolio
-<p>by: Steven Francisco</p>
+<br>
+by: Steven Francisco
 
 This app lets the user create, read, update, and delete information for a portfolio of skill and experiences.
 
