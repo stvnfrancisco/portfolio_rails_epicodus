@@ -9,6 +9,7 @@ This app lets the user create, read, update, and delete information for a portfo
 Built using Ruby ver.: ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-darwin14]
 
 Database Setup Instructions:
+
 1.) $bundle
 
 2.) In another tab start the postgres server, and in yet another tab run psql.
