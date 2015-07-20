@@ -10,9 +10,13 @@ Built using Ruby ver.: ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-darwin1
 
 Database Setup Instructions:
 1.) $bundle
+
 2.) In another tab start the postgres server, and in yet another tab run psql.
+
 3.) $rake db:create
+
 4.) $rake db:migrate
+
 5.) $rake db:test:prepare
 
 MIT License: Copyright (c) 2015
